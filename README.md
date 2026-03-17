@@ -35,7 +35,7 @@ Prebuilt toy store web application interface free for commercial use published u
 This project was built strictly according to academic specifications. 
 - **State Management:** Uses LocalStorage for simulation purposes.
 - **SEO & Performance:** As a standard SPA (Single Page Application), this prototype is not optimized for SEO.
-- **Stability:** Due to the heavy reliance on the Angular ecosystem, long-term compatibility depends on the framework's versioning cycle.
+- **Stability:** Due to the heavy reliance on the Angular ecosystem, long-term compatibility depends on the framework's versioning cycle (use exact versions provided in Tech & versions used section)
 
 ## License
 Licensed under the [Apache License, Version 2.0](LICENSE). 
