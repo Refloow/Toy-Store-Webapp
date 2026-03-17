@@ -1,0 +1,44 @@
+<div class="details-container" *ngIf="toy">
+  <button mat-button color="primary" routerLink="/" class="back-btn">← Nazad na katalog</button>
+
+  <div class="layout-split">
+    <div class="left-side">
+      <img [src]="'/' + toy.id + '.png'" alt="{{ toy.name }}" class="toy-image" onerror="this.src='/logo.png'">
+      
+      <div class="toy-info">
+        <h2>{{ toy.name }}</h2>
+        <p class="tag">{{ toy.type | uppercase }} | Uzrast: {{ toy.age }}</p>
+        <p class="desc">{{ toy.description }}</p>
+        <p><strong>Ciljna grupa:</strong> {{ toy.targetGroup }}</p>
+        <p><strong>Proizvedeno:</strong> {{ toy.productionDate | date:'dd.MM.yyyy' }}</p>
+        <h3 class="price">{{ toy.price }} RSD</h3>
+        
+        <button mat-raised-button color="primary" class="reserve-btn" (click)="reserveToy()">Rezervisi</button>
+      </div>
+    </div>
+
+<div class="right-side">
+      <h3>Recenzije korisnika</h3>
+      
+      <div *ngIf="toy.reviews.length === 0" class="no-reviews">
+        <p>Trenutno nema recenzija za ovu igračku.</p>
+      </div>
+
+      <div class="reviews-wall" *ngIf="toy.reviews.length > 0">
+        <div class="review-card" *ngFor="let rev of toy.reviews">
+          <div class="review-header">
+            <strong>{{ rev.username }}</strong>
+            <div class="stars">
+              <mat-icon *ngFor="let s of [1,2,3,4,5]" [class.filled]="s <= rev.rating">star</mat-icon>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!toy" class="not-found">
+  <h2>Igracka nije pronadjena.</h2>
+  <button mat-raised-button routerLink="/">Nazad na katalog</button>
+</div>

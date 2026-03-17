@@ -1,0 +1,71 @@
+<div class="auth-container">
+  <mat-card class="auth-card">
+    <mat-card-header>
+      <mat-card-title class="auth-title">
+        {{ currentUser ? 'Moj Profil' : (isLoginMode ? 'Prijava' : 'Registracija') }}
+      </mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <div *ngIf="errorMessage" class="error-msg">
+        {{ errorMessage }}
+      </div>
+
+      <form (ngSubmit)="onSubmit()" #authForm="ngForm" class="auth-form">
+
+        <ng-container *ngIf="!isLoginMode || currentUser">
+          <mat-form-field appearance="outline">
+            <mat-label>Ime</mat-label>
+            <input matInput [(ngModel)]="formData.firstName" name="firstName" required>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Prezime</mat-label>
+            <input matInput [(ngModel)]="formData.lastName" name="lastName" required>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Telefon</mat-label>
+            <input matInput [(ngModel)]="formData.phone" name="phone" required>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Adresa</mat-label>
+            <input matInput [(ngModel)]="formData.address" name="address" required>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Omiljene vrste igračaka</mat-label>
+            <mat-select [(ngModel)]="formData.favoriteToyTypes" name="favoriteToyTypes" multiple required>
+              <mat-option *ngFor="let type of toyTypes" [value]="type">{{ type | titlecase }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </ng-container>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput type="email" [(ngModel)]="formData.email" name="email" required email>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Lozinka</mat-label>
+          <input matInput type="password" [(ngModel)]="formData.password" name="password" required minlength="4">
+        </mat-form-field>
+
+        <div class="actions">
+          <button mat-raised-button color="primary" type="submit" [disabled]="!authForm.valid">
+            {{ currentUser ? 'Sačuvaj izmene' : (isLoginMode ? 'Prijavi se' : 'Registruj se') }}
+          </button>
+          
+          <button *ngIf="!currentUser" mat-button type="button" (click)="toggleMode()">
+            {{ isLoginMode ? 'Nemaš nalog? Registruj se' : 'Već imaš nalog? Prijavi se' }}
+          </button>
+
+          <button *ngIf="currentUser" mat-raised-button color="warn" type="button" (click)="logout()">
+            Odjavi se
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

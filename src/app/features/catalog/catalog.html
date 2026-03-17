@@ -1,0 +1,70 @@
+<div class="catalog-container">
+  
+  <div class="search-section">
+    <mat-form-field appearance="outline" class="custom-field">
+      <mat-label>Pretraga po nazivu i opisu</mat-label>
+      <input matInput [(ngModel)]="searchTerm" (ngModelChange)="onSearch()" placeholder="Unesite naziv...">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="custom-field">
+      <mat-label>Tip igračke</mat-label>
+      <mat-select [(ngModel)]="selectedType" (ngModelChange)="onSearch()" panelClass="solid-dropdown">
+        <mat-option value="">Svi tipovi</mat-option>
+        <mat-option value="slagalica">Slagalica</mat-option>
+        <mat-option value="slikovnica">Slikovnica</mat-option>
+        <mat-option value="figura">Figura</mat-option>
+        <mat-option value="karakter">Karakter</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="custom-field">
+      <mat-label>Ciljna grupa</mat-label>
+      <mat-select [(ngModel)]="selectedTargetGroup" (ngModelChange)="onSearch()" panelClass="solid-dropdown">
+        <mat-option value="">Svi</mat-option>
+        <mat-option value="dečak">Dečaci</mat-option>
+        <mat-option value="devojčica">Devojčice</mat-option>
+        <mat-option value="svi">Univerzalno</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="custom-field">
+  <mat-label>Uzrast</mat-label>
+  <mat-select [(ngModel)]="selectedAge" (ngModelChange)="onSearch()" panelClass="solid-dropdown">
+    <mat-option value="">Svi uzrasti</mat-option>
+    <mat-option value="0+">Bebe (0+)</mat-option>
+    <mat-option value="3+">Deca (3+)</mat-option>
+    <mat-option value="5+">Školarci (5+)</mat-option>
+    <mat-option value="8+">Stariji (8+)</mat-option>
+  </mat-select>
+</mat-form-field>
+  </div>
+
+  <div class="toys-grid">
+    <mat-card class="toy-card" *ngFor="let toy of toys" [routerLink]="['/toy', toy.id]">
+      
+      <img mat-card-image [src]="toy.id + '.png'" alt="{{ toy.name }}" onerror="this.src='logo.png'">
+
+      <mat-card-header>
+        <mat-card-title>{{ toy.name }}</mat-card-title>
+        <mat-card-subtitle>{{ toy.type | uppercase }} | Uzrast: {{ toy.age }}</mat-card-subtitle>
+      </mat-card-header>
+      
+      <mat-card-content>
+        <p><strong>Opis:</strong> {{ toy.description }}</p>
+        <p><strong>Za koga:</strong> {{ toy.targetGroup }}</p>
+        <p class="price-tag"><strong>Cena:</strong> {{ toy.price }} RSD</p>
+        
+        <div *ngIf="toy.reviews.length > 0; else noReviews" class="reviews-info">
+          <p>⭐ {{ toy.reviews[0].rating }}/5 (Procitaj recenzije)</p>
+        </div>
+        <ng-template #noReviews><p class="no-rev-text">Nema recenzija</p></ng-template>
+      </mat-card-content>
+
+      <mat-card-actions class="card-actions-centered">
+        <button mat-raised-button class="solid-btn" (click)="$event.stopPropagation(); reserveToy(toy)">
+          Rezerviši
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
