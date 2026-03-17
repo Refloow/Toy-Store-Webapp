@@ -9,4 +9,4 @@ Tech & versions used:
 > 
 > Typescript 5.9.2
 
-Images used in the example toy interface display were sourced from google, they might be copyrighted and are used for educational non commercial purposes as an example
+Images used here in the example toy interface display were sourced from google, they might be copyrighted and are soly used for educational non commercial purposes
