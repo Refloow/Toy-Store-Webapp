@@ -1,7 +1,7 @@
 {
   "name": "toy-store-webapp",
   "version": "1.0.0",
-  "description": "Open source and free to use toy store fully built web application",
+  "description": "Node angular & typescript toy store user interface prototype. Not production ready/finished application",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
