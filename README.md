@@ -2,7 +2,7 @@
 Prebuilt toy store web application interface free for commercial use published under Appache 2.0 license built by Veljko Vuckovic following specifications listed in angular collage course
 
 
-Tech & versions used:
+## Tech & versions used:
 > Built with node.js 22.22.1
 > 
 > Angular 21.2.2
@@ -31,4 +31,17 @@ Tech & versions used:
    `npm start`
 4. Open your browser at `http://localhost:4200`
 
-Images used here in the example toy interface display were sourced from google, they might be copyrighted and are soly used for educational non commercial purposes
+## Developer's Note
+This project was built strictly according to academic specifications. 
+- **State Management:** Uses LocalStorage for simulation purposes.
+- **SEO & Performance:** As a standard SPA (Single Page Application), this prototype is not optimized for SEO.
+- **Stability:** Due to the heavy reliance on the Angular ecosystem, long-term compatibility depends on the framework's versioning cycle.
+
+## License
+Licensed under the [Apache License, Version 2.0](LICENSE). 
+
+Built by **Veljko Vuckovic** for the Client-side Web Applications course.
+
+
+## Disclamer
+- Images used here in the example toy interface display were sourced from google, they might be copyrighted and are soly used for educational non commercial purposes
