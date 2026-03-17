@@ -1,7 +1,6 @@
 # Toy-Store-Webapp
 Prebuilt toy store web application interface free for commercial use published under Appache 2.0 license built by Veljko Vuckovic following specifications listed in angular collage course
 
-
 ## Tech & versions used:
 > Built with node.js 22.22.1
 > 
@@ -45,3 +44,14 @@ Built by **Veljko Vuckovic** for the Client-side Web Applications course.
 
 ## Disclamer
 - Images used here in the example toy interface display were sourced from google, they might be copyrighted and are soly used for educational non commercial purposes
+
+
+## Showcase Screenshots
+<img width="1902" height="945" alt="Screenshot 2026-03-17 204010" src="https://github.com/user-attachments/assets/cfbb0c6a-fcc7-4928-aa0b-0fcf7120a64e" />
+<img width="1913" height="944" alt="Screenshot 2026-03-17 194842" src="https://github.com/user-attachments/assets/dc6b9e31-d03a-48b2-b860-f9b22ce653de" />
+<img width="2550" height="1252" alt="Screenshot 2026-03-17 200841" src="https://github.com/user-attachments/assets/7dff10c4-bfd2-45b7-916b-8536ecdc712e" />
+<img width="1912" height="830" alt="Screenshot 2026-03-17 200606" src="https://github.com/user-attachments/assets/75d31227-b096-418f-9135-f58d9506bd88" />
+<img width="1910" height="941" alt="Screenshot 2026-03-17 200738" src="https://github.com/user-attachments/assets/5238e7c1-b1ec-4b4e-be77-38692280d0a2" />
+
+
+
