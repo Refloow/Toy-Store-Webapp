@@ -1,8 +1,14 @@
 # Toy-Store-Webapp
 Prebuilt toy store web application interface free for commercial use published under Appache 2.0 license built by Veljko Vuckovic following specifications listed in angular collage course
 
-## Video Showcase:
-[![Video Thumbnail](https://img.youtube.com/vi/yIGibSB-NXg/0.jpg)](https://www.youtube.com/watch?v=yIGibSB-NXg)
+<div align="center">
+  <h1>🧸 UI Video Showcase</h1>
+  <a href="https://www.youtube.com/watch?v=yIGibSB-NXg" target="_blank">
+    <img src="https://img.youtube.com/vi/yIGibSB-NXg/maxresdefault.jpg" alt="Video Demo" width="600" style="border-radius: 10px;">
+  </a>
+  <br>
+  <p><b><a href="https://www.youtube.com/watch?v=yIGibSB-NXg">Full youtube video showcase</a></b></p>
+</div>
 
 
 ## Tech & versions used:
